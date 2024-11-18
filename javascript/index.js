@@ -31,6 +31,9 @@ function updateCity(event) {
     let selectElement = document.querySelector("#city");
     cityTimeZone = selectElement.value;
   }
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
 
   if (cityTimeZone.length > 0) {
     debugger;
