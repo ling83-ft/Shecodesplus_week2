@@ -22,6 +22,19 @@ function updateTime() {
       "h:mm:ss"
     )} <small>${parisTime.format("A")}</small>`;
   }
+
+  //Nairobi
+
+  let nairobiElement = document.querySelector("#nairobi");
+  if (nairobiElement) {
+    let nairobiDateElement = nairobiElement.querySelector(".date");
+    let nairobiTimeElement = nairobiElement.querySelector(".time");
+    let nairobiTime = moment().tz("Africa/Nairobi");
+    nairobiDateElement.innerHTML = nairobiTime.format("MMMM Do YYYY");
+    nairobiTimeElement.innerHTML = `${nairobiTime.format(
+      "h:mm:ss"
+    )} <small>${nairobiTime.format("A")}</small>`;
+  }
 }
 function updateCity(event) {
   let cityTimeZone;
@@ -55,7 +68,9 @@ function updateCity(event) {
           <div class="time">${cityTime.format(
             "h:mm:ss"
           )}  <small>${cityTime.format("A")}</small></div>
-    </div>`;
+    </div>
+    <a href="/">All cities</a
+      >`;
   } else {
     updateTime();
   }
